@@ -13,6 +13,6 @@
 
 ## Membri del gruppo
 
-Drago Alessio
-Penco Alessandro
-Singh Gagandeep
+# Drago Alessio
+# Penco Alessandro
+# Singh Gagandeep
