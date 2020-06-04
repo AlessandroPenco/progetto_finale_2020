@@ -13,5 +13,6 @@
 
 ## Membri del gruppo
 
-Drago Alessio\nPenco Alessandro
+* Drago Alessio
+* Penco Alessandro
 * Singh Gagandeep
