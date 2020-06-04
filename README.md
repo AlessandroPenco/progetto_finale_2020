@@ -13,6 +13,6 @@
 
 ## Membri del gruppo
 
-* Drago Alessio
-* Penco Alessandro
-* Singh Gagandeep
+* Drago Alessio - 4663991
+* Penco Alessandro - 4697398
+* Singh Gagandeep - 4658821
