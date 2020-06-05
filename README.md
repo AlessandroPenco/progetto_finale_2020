@@ -2,6 +2,7 @@
 
 ## Contenuto del repository
 
+* `lab_05_11` : contenente il corpo del laboratorio, i file .java divisi per pacchetto. La base sulla quale abbiamo fatto affidamento per l'implementazione del progetto finale è la soluzione del laboratorio del 05_11, per non appropriarci di meriti non nostri abbiamo deciso di non modificare il nome della cartella
 * `semantica-statica.ml` : semantica statica del linguaggio esteso, definita in OCaml
 * `semantica-dinamica.ml` : semantica dinamica del linguaggio esteso, definita in OCaml
 * `specifica.pdf`: specifica del linguaggio esteso, con commenti ed esempi
