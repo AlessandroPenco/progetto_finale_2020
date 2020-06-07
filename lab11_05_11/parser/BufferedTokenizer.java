@@ -23,6 +23,7 @@ public class BufferedTokenizer implements Tokenizer {
 	private String tokenString; // the lexeme of the currently recognized token
 	private int intValue; // the integer value if the currently recognized token has type NUM
 	private boolean boolValue; // the boolean value if the currently recognized token has type BOOL
+	private String seasonOfValue; //aggiunto in data 07/06/2020
 
 	static { // static initializer to define the regular expression of all valid lexemes
 		// remark: groups must correspond to the ordinal of the corresponding
@@ -50,6 +51,13 @@ public class BufferedTokenizer implements Tokenizer {
 		keywords.put("else", ELSE);
 		keywords.put("fst", FST);
 		keywords.put("snd", SND);
+		keywords.put("seasonof", SEASONOF); //aggiunto in data 07/06/2020
+		keywords.put("winter", WINTER); //aggiunto in data 07/06/2020
+		keywords.put("spring", SPRING); //aggiunto in data 07/06/2020
+		keywords.put("summer", SUMMER); //aggiunto in data 07/06/2020
+		keywords.put("fall", FALL); //aggiunto in data 07/06/2020
+		keywords.put("for", FOR); //aggiunto in data 07/06/2020
+		keywords.put("to", TO); //aggiunto in data 07/06/2020
 	}
 
 	static { // static initializer to define the table of symbols
@@ -68,6 +76,8 @@ public class BufferedTokenizer implements Tokenizer {
 		symbols.put("!", NOT);
 		symbols.put("&&", AND);
 		symbols.put("==", EQ);
+		symbols.put("<", LOWER);
+		symbols.put("#", NUMBER);
 	}
 
 	public BufferedTokenizer(BufferedReader br) {
@@ -118,6 +128,9 @@ public class BufferedTokenizer implements Tokenizer {
 		case BOOL:
 			boolValue = Boolean.parseBoolean(tokenString);
 			break;
+	/*	case SEASONOF: //aggiunto in data 07/06/2020
+			seasonOfValue = String.valueOf(tokenString);
+			break; */
 		default: // no other annotations required
 			break;
 		}
@@ -170,7 +183,12 @@ public class BufferedTokenizer implements Tokenizer {
 		checkLegalState(NUM);
 		return intValue;
 	}
-
+	/*
+	public String seasonOfValue() { //aggiunto in data 07/06/2020
+		checkLegalState(SEASONOF);
+		return seasonOfValue;
+	}
+*/
 	@Override
 	public TokenType tokenType() { // type of the most recently recognized token, if any
 		checkLegalState();

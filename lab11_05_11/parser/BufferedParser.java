@@ -114,6 +114,8 @@ public class BufferedParser implements Parser {
 			return parseAssignStmt();
 		case IF:
 			return parseIfStmt();
+		case SEASONOF: // aggiunto in data 07/06/2020
+			return parseSeasonOfStmt();
 		}
 	}
 
@@ -158,6 +160,11 @@ public class BufferedParser implements Parser {
 		var stmts = parseStmtSeq();
 		consume(CLOSE_BLOCK);
 		return new Block(stmts);
+	}
+	
+	private SeasonOfStmt parseSeasonOfStmt() throws ParserException { // aggiunto in data 07/06/2020
+		consume(SEASONOF); // or nextToken() since PRINT has already been recognized
+		return new SeasonOfStmt(parseExp());
 	}
 
 	/*
