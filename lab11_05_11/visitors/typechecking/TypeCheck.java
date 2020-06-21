@@ -147,5 +147,13 @@ public class TypeCheck implements Visitor<Type> {
 	public Type visitSnd(Exp exp) {
 		return exp.accept(this).getSndProdType();
 	}
+	
+	//07/06/2020
+	@Override
+	public Type visitSeasonOfLiteral(Exp exp) {
+		exp.accept(this);
+		return SEASONOF;
+	}
+	//
 
 }

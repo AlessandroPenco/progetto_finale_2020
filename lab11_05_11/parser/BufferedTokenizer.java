@@ -23,6 +23,7 @@ public class BufferedTokenizer implements Tokenizer {
 	private String tokenString; // the lexeme of the currently recognized token
 	private int intValue; // the integer value if the currently recognized token has type NUM
 	private boolean boolValue; // the boolean value if the currently recognized token has type BOOL
+	private int seasonValue; //aggiunto in data 07/06/2020
 
 	static { // static initializer to define the regular expression of all valid lexemes
 		// remark: groups must correspond to the ordinal of the corresponding
@@ -50,6 +51,13 @@ public class BufferedTokenizer implements Tokenizer {
 		keywords.put("else", ELSE);
 		keywords.put("fst", FST);
 		keywords.put("snd", SND);
+		keywords.put("seasonof", SEASONOF); //aggiunto in data 07/06/2020
+		keywords.put("winter", SEASON); //aggiunto in data 07/06/2020, modificato 21/06
+		keywords.put("spring", SEASON); //aggiunto in data 07/06/2020, modificato 21/06
+		keywords.put("summer", SEASON); //aggiunto in data 07/06/2020, modificato 21/06
+		keywords.put("fall", SEASON); //aggiunto in data 07/06/2020, modificato 21/06
+		keywords.put("for", FOR); //aggiunto in data 07/06/2020
+		keywords.put("to", TO); //aggiunto in data 07/06/2020
 	}
 
 	static { // static initializer to define the table of symbols
@@ -68,6 +76,8 @@ public class BufferedTokenizer implements Tokenizer {
 		symbols.put("!", NOT);
 		symbols.put("&&", AND);
 		symbols.put("==", EQ);
+		symbols.put("<", LOWER);
+		symbols.put("#", NUMBER);
 	}
 
 	public BufferedTokenizer(BufferedReader br) {
@@ -110,7 +120,7 @@ public class BufferedTokenizer implements Tokenizer {
 		tokenType = null;
 	}
 
-	private void semanticAnnotation() { // required for num or bool literals
+	private void semanticAnnotation() { // required for num or bool literals // seaosonof
 		switch (tokenType) {
 		case NUM:
 			intValue = Integer.decode(tokenString);
@@ -118,6 +128,23 @@ public class BufferedTokenizer implements Tokenizer {
 		case BOOL:
 			boolValue = Boolean.parseBoolean(tokenString);
 			break;
+		case SEASON:// aggiunto 21/06
+			switch(tokenString) {
+			case "winter":
+				seasonValue = 0;
+				break;
+			case "spring":
+				seasonValue = 1;
+				break;
+			case "summer":
+				seasonValue = 2;
+				break;
+			case "fall":
+				seasonValue = 3;
+				break;// aggiunto 21/06
+			default:
+				break;
+			}
 		default: // no other annotations required
 			break;
 		}
@@ -170,7 +197,12 @@ public class BufferedTokenizer implements Tokenizer {
 		checkLegalState(NUM);
 		return intValue;
 	}
-
+	
+	public int seasonValue() { // aggiunto in data 07/06/2020, 21/06
+		checkLegalState(SEASON);
+		return seasonValue;
+	}
+	
 	@Override
 	public TokenType tokenType() { // type of the most recently recognized token, if any
 		checkLegalState();

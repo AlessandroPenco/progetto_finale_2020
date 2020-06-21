@@ -46,4 +46,6 @@ public interface Visitor<T> {
 	T visitFst(Exp exp);
 
 	T visitSnd(Exp exp);
+	
+	T visitSeasonOfLiteral(Exp exp); // 07/06/2020
 }
