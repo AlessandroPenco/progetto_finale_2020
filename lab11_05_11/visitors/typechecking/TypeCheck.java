@@ -65,6 +65,16 @@ public class TypeCheck implements Visitor<Type> {
 		env.exitScope();
 		return null;
 	}
+	
+	@Override
+	public Type visitForStmt(VarIdent id, Exp exp, Block stmts) { // aggiunto in data 23/06
+		INT.checkEqual(env.lookup(id));
+		INT.checkEqual(exp.accept(this));
+		if (stmts == null)
+			return null;
+		stmts.accept(this);
+		return null;
+	}
 
 	// static semantics for sequences of statements
 	// no value returned by the visitor
@@ -121,7 +131,13 @@ public class TypeCheck implements Visitor<Type> {
 		checkBinOp(left, right, BOOL);
 		return BOOL;
 	}
-
+	
+	@Override
+	public Type visitLower(Exp left, Exp right) { // aggiunto in data 23/06
+		left.accept(this).checkEqual(right.accept(this));
+		return BOOL;
+	}
+	
 	@Override
 	public Type visitBoolLiteral(boolean value) {
 		return BOOL;
@@ -146,6 +162,21 @@ public class TypeCheck implements Visitor<Type> {
 	@Override
 	public Type visitSnd(Exp exp) {
 		return exp.accept(this).getSndProdType();
+	}
+	
+	@Override
+	public Type visitNumOf(Exp exp) { // aggiunto in data 23/06
+		return SEASON.checkEqual(exp.accept(this));
+	}
+	
+	@Override
+	public Type visitSeasonOf(Exp exp) { // aggiunto in data 23/06
+		return INT.checkEqual(exp.accept(this));
+	}
+	
+	@Override
+	public Type visitSeasonLiteral(int value) { // aggiunto in data 23/06
+		return SEASON;
 	}
 
 }

@@ -13,4 +13,6 @@ public interface Value {
 	default PairValue toProd() {
 		throw new EvaluatorException("Expecting a pair");
 	}
+
+	boolean lower(Object obj);
 }

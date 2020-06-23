@@ -13,6 +13,8 @@ public interface Tokenizer extends AutoCloseable {
 	int intValue();
 
 	boolean boolValue();
+	
+	int seasonValue(); // aggiunto 21/06
 
 	public void close() throws IOException;
 

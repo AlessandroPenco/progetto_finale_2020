@@ -76,6 +76,20 @@ public class Eval implements Visitor<Value> {
 		env.exitScope();
 		return null;
 	}
+	
+	@Override
+	public Value visitForStmt(VarIdent id, Exp exp, Block stmts) { // aggiunto in data 23/06
+		var v = env.lookup(id).toInt();
+		var m = exp.accept(this).toInt();
+		if(v <= m) {
+			if (stmts != null) {
+				stmts.accept(this);
+				env.update(id, env.lookup(id)); // da modificare
+				return visitForStmt(id, exp, stmts);
+			}
+		}
+		return null;
+	}
 
 	// dynamic semantics for sequences of statements
 	// no value returned by the visitor
@@ -138,6 +152,11 @@ public class Eval implements Visitor<Value> {
 	@Override
 	public Value visitEq(Exp left, Exp right) {
 		return new BoolValue(left.accept(this).equals(right.accept(this)));
+	}
+	
+	@Override
+	public Value visitLower(Exp left, Exp right) { // aggiunto in data 23/06
+		return new BoolValue(left.accept(this).lower(right.accept(this)));
 	}
 
 	@Override

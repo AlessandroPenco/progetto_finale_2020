@@ -14,6 +14,15 @@ public class BoolValue extends PrimValue<Boolean> {
 			return false;
 		return value.equals(((BoolValue) obj).value);
 	}
+	
+	public boolean lower(Object obj) {
+		if(this.equals(obj))
+			return false;
+		if (!(obj instanceof BoolValue))
+			return false;
+		if (obj.equals(true))return true;
+		else return false;
+	}
 
 	@Override
 	public boolean toBool() {
