@@ -14,10 +14,36 @@ public class IntValue extends PrimValue<Integer> {
 			return false;
 		return value.equals(((IntValue) obj).value);
 	}
+	
+	@Override
+	public final boolean lower(Object obj) { // 24/06
+		if(this.equals(obj))
+			return false;
+		if (!(obj instanceof IntValue))
+			return false;
+		if (this.toInt() < ((IntValue) obj).toInt())return true;
+		else return false;
+	}
 
 	@Override
 	public int toInt() {
 		return value;
+	}
+	
+	@Override
+	public String toSeason() {
+		switch (value) {
+		case 0:
+			return "Winter";
+		case 1:
+			return "Spring";
+		case 2:
+			return "Summer";
+		case 3:
+			return "Fall";
+		default:
+			throw new IndexOutOfBoundsException();
+		}
 	}
 
 }

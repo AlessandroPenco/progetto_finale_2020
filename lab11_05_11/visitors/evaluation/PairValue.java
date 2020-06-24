@@ -45,4 +45,14 @@ public class PairValue implements Value {
 		var op = (PairValue) obj;
 		return fstVal.equals(op.fstVal) && sndVal.equals(op.sndVal);
 	}
+	
+	@Override
+	public final boolean lower(Object obj) { // 24/06
+		if(this.equals(obj))
+			return false;
+		if (!(obj instanceof PairValue))
+			return false;
+		var op = (PairValue) obj;
+		return fstVal.lower(op.fstVal) && sndVal.lower(op.sndVal);
+	}
 }

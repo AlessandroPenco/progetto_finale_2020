@@ -13,4 +13,10 @@ public interface Value {
 	default PairValue toProd() {
 		throw new EvaluatorException("Expecting a pair");
 	}
+
+	default String toSeason() { // 24/06
+		throw new EvaluatorException("Expecting an integer");
+	}
+	
+	boolean lower(Object obj); // 23/06
 }
