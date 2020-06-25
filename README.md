@@ -2,7 +2,6 @@
 
 ## Contenuto del repository
 
-* `lab_05_11` : contenente il corpo del laboratorio, i file .java divisi per pacchetto. La base sulla quale abbiamo fatto affidamento per l'implementazione del progetto finale è la soluzione del laboratorio del 05_11, per non appropriarci di meriti non nostri abbiamo deciso di non modificare il nome della cartella
 * `semantica-statica.ml` : semantica statica del linguaggio esteso, definita in OCaml
 * `semantica-dinamica.ml` : semantica dinamica del linguaggio esteso, definita in OCaml
 * `specifica.pdf`: specifica del linguaggio esteso, con commenti ed esempi
@@ -12,8 +11,13 @@
 * `tests/failure/dynamic-semantics/`: test che non passano i controlli di semantica dinamica (senza opzione `-ntc`)
 * `tests/failure/ntc/`: test che non passano i controlli di semantica dinamica (con opzione `-ntc`)
 
-## Membri del gruppo
+## Modalità di consegna
 
-* Drago Alessio - 4663991
-* Penco Alessandro - 4697398
-* Singh Gagandeep - 4658821
+È sufficiente avere attivato il link di GitHub classroom e rendere disponibili sul repository tutti i sorgenti necessari
+per la compilazione del progetto. Ricordatevi di fare il commit e push finali e poi comunicatemi il link
+del repository tramite la [consegna su AulaWeb](https://2019.aulaweb.unige.it/mod/assign/view.php?id=20793). 
+Per favore, indicatemi un **unico** repository anche se il gruppo è costitutio da più persone.
+
+**Importante**: per la consegna è necessario che il progetto passi **tutti i 29 test** contenuti nel folder `tests`.
+Tutti i componenti del gruppo devono contribuire equamente allo sviluppo del progetto, lo scopo del colloquio finale **individuale**
+è quello di verificare che ognuno abbia ben compreso il funzionamento del progetto.
