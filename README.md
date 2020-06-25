@@ -25,6 +25,6 @@ Tutti i componenti del gruppo devono contribuire equamente allo sviluppo del pro
 
 ## Membri del gruppo
 
-Alessandro Penco - 4697398
-Alessio Drago - 4663991
-Gagandeep Singh - 4658821
+* Alessandro Penco - 4697398
+* Alessio Drago - 4663991
+* Gagandeep Singh - 4658821
