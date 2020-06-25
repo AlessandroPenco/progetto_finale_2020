@@ -2,6 +2,7 @@
 
 ## Contenuto del repository
 
+* `progetto_LPO_2020` : Directori contenente il progetto
 * `semantica-statica.ml` : semantica statica del linguaggio esteso, definita in OCaml
 * `semantica-dinamica.ml` : semantica dinamica del linguaggio esteso, definita in OCaml
 * `specifica.pdf`: specifica del linguaggio esteso, con commenti ed esempi
@@ -21,3 +22,9 @@ Per favore, indicatemi un **unico** repository anche se il gruppo è costitutio 
 **Importante**: per la consegna è necessario che il progetto passi **tutti i 29 test** contenuti nel folder `tests`.
 Tutti i componenti del gruppo devono contribuire equamente allo sviluppo del progetto, lo scopo del colloquio finale **individuale**
 è quello di verificare che ognuno abbia ben compreso il funzionamento del progetto.
+
+## Membri del gruppo
+
+Alessandro Penco - 4697398
+Alessio Drago - 4663991
+Gagandeep Singh - 4658821
