@@ -28,3 +28,29 @@ Tutti i componenti del gruppo devono contribuire equamente allo sviluppo del pro
 * Alessandro Penco - 4697398
 * Alessio Drago - 4663991
 * Gagandeep Singh - 4658821
+
+## Esecuzione del progetto
+
+Si è usato come modello di partenza la soluzione al laboratorio 11-05-20 al quale sono stati aggiunti i seguenti file:
+* `progetto_LPO_2020/parser/ast/ForStmt.java`
+* `progetto_LPO_2020/parser/ast/Lower.java`
+* `progetto_LPO_2020/parser/ast/NumOf.java`
+* `progetto_LPO_2020/parser/ast/SeasonLiteral.java`
+* `progetto_LPO_2020/parser/ast/SeasonOf.java`
+* `progetto_LPO_2020/visitors/evaluation/SeasonValue.java`
+
+Inoltre sono stati modificati i seguenti sorgenti:
+* `progetto_LPO_2020/parser/BufferedParser.java
+* `progetto_LPO_2020/parser/BufferedTokenizer.java
+* `progetto_LPO_2020/parser/TokenType.java
+* `progetto_LPO_2020/parser/Tokenizer.java
+* `progetto_LPO_2020/visitors/Visitors.java
+* `progetto_LPO_2020/visitors/evaluation/BoolValue.java
+* `progetto_LPO_2020/visitors/evaluation/IntValue.java
+* `progetto_LPO_2020/visitors/evaluation/PariValue.java
+* `progetto_LPO_2020/visitors/evaluation/Value.java
+* `progetto_LPO_2020/visitors/evaluation/Eval.java
+* `progetto_LPO_2020/visitors/typechecking/PrimtType.java
+* `progetto_LPO_2020/visitors/typechecking/TypeCheck.java
+
+## Note
