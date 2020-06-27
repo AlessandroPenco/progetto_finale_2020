@@ -40,17 +40,17 @@ Si è usato come modello di partenza la soluzione al laboratorio 11-05-20 al qua
 * `progetto_LPO_2020/visitors/evaluation/SeasonValue.java`
 
 Inoltre sono stati modificati i seguenti sorgenti:
-* `progetto_LPO_2020/parser/BufferedParser.java'
-* `progetto_LPO_2020/parser/BufferedTokenizer.java'
-* `progetto_LPO_2020/parser/TokenType.java'
-* `progetto_LPO_2020/parser/Tokenizer.java'
-* `progetto_LPO_2020/visitors/Visitors.java'
-* `progetto_LPO_2020/visitors/evaluation/BoolValue.java'
-* `progetto_LPO_2020/visitors/evaluation/IntValue.java'
-* `progetto_LPO_2020/visitors/evaluation/PariValue.java'
-* `progetto_LPO_2020/visitors/evaluation/Value.java'
-* `progetto_LPO_2020/visitors/evaluation/Eval.java'
-* `progetto_LPO_2020/visitors/typechecking/PrimtType.java'
-* `progetto_LPO_2020/visitors/typechecking/TypeCheck.java'
+* `progetto_LPO_2020/parser/BufferedParser.java`
+* `progetto_LPO_2020/parser/BufferedTokenizer.java`
+* `progetto_LPO_2020/parser/TokenType.java`
+* `progetto_LPO_2020/parser/Tokenizer.java`
+* `progetto_LPO_2020/visitors/Visitors.java`
+* `progetto_LPO_2020/visitors/evaluation/BoolValue.java`
+* `progetto_LPO_2020/visitors/evaluation/IntValue.java`
+* `progetto_LPO_2020/visitors/evaluation/PariValue.java`
+* `progetto_LPO_2020/visitors/evaluation/Value.java`
+* `progetto_LPO_2020/visitors/evaluation/Eval.java`
+* `progetto_LPO_2020/visitors/typechecking/PrimtType.java`
+* `progetto_LPO_2020/visitors/typechecking/TypeCheck.java`
 
 ## Note
