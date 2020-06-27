@@ -47,7 +47,7 @@ public class PairValue implements Value {
 	}
 	
 	@Override
-	public final boolean lower(Object obj) { // 24/06
+	public final boolean lower(Object obj) { // aggiunta funzione lower per il tipo coppia
 		if(this.equals(obj))
 			return false;
 		if (!(obj instanceof PairValue))

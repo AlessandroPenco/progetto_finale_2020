@@ -9,6 +9,6 @@ public class Lower extends BinaryOp {
 
 	@Override
 	public <T> T accept(Visitor<T> visitor) {
-		return visitor.visitLower(left, right); //aggiungere alla classe visitors
+		return visitor.visitLower(left, right); 
 	}
 }

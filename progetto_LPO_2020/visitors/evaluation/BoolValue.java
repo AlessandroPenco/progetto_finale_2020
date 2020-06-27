@@ -16,7 +16,7 @@ public class BoolValue extends PrimValue<Boolean> {
 	}
 	
 	@Override
-	public final boolean lower(Object obj) { // 23/06
+	public final boolean lower(Object obj) { // aggiunta funzione lower per i booleani
 		if(this.equals(obj))
 			return false;
 		if (!(obj instanceof BoolValue))

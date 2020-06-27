@@ -7,6 +7,4 @@ public enum TokenType { // important: SKIP, IDENT, and NUM must have ordinals 1,
 
 }
 
-//aggiunto SEASONOF, WINTER, SPRING, SUMMER, FALL, FOR, TO, LOWER, NUMBER, in data 07/06/2020
-//modificato in data 21/06/2020 (WINTER, SPRING, SUMMER, FALL) -> season
-
+//aggiunti enum: SEASONOF, SEASON, FOR, TO, LOWER, NUMBER, 

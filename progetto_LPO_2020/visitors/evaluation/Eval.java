@@ -78,7 +78,7 @@ public class Eval implements Visitor<Value> {
 	}
 	
 	@Override
-	public Value visitForStmt(VarIdent id, Exp exp, Block stmts) { // aggiunto in data 23/06
+	public Value visitForStmt(VarIdent id, Exp exp, Block stmts) { 
 		var v = env.lookup(id).toInt();
 		var m = exp.accept(this).toInt();
 		if(v <= m) {
@@ -156,7 +156,7 @@ public class Eval implements Visitor<Value> {
 	}
 	
 	@Override
-	public Value visitLower(Exp left, Exp right) { // aggiunto in data 23/06
+	public Value visitLower(Exp left, Exp right) { 
 		return new BoolValue(left.accept(this).lower(right.accept(this)));
 	}
 

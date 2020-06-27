@@ -16,7 +16,7 @@ public class IntValue extends PrimValue<Integer> {
 	}
 	
 	@Override
-	public final boolean lower(Object obj) { // 24/06
+	public final boolean lower(Object obj) { // aggiunta funzione lower per gli interi
 		if(this.equals(obj))
 			return false;
 		if (!(obj instanceof IntValue))
@@ -31,7 +31,7 @@ public class IntValue extends PrimValue<Integer> {
 	}
 	
 	@Override
-	public String toSeason() {
+	public String toSeason() { // aggiunta funzione toSeason per l'operatore 'seasonof'
 		switch (value) {
 		case 0:
 			return "Winter";

@@ -10,6 +10,6 @@ public class NumOf extends UnaryOp {
 
 	@Override
 	public <T> T accept(Visitor<T> visitor) {
-		return visitor.visitNumOf(exp); //aggiungere alla classe visitors
+		return visitor.visitNumOf(exp); 
 	}
 }

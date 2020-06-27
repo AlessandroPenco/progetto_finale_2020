@@ -15,12 +15,13 @@ import progetto_LPO_2020.parser.ast.*;
 /*
 Prog ::= StmtSeq EOF
 StmtSeq ::= Stmt (';' StmtSeq)?
-Stmt ::= 'var'? IDENT '=' Exp | 'print' Exp |  'if' '(' Exp ')' '{' StmtSeq '}' ('else' '{' StmtSeq '}')? 
+Stmt ::= 'var'? IDENT '=' Exp | 'print' Exp | 'for' IDENT 'to' Exp '{' StmtSeq '}' |  'if' '(' Exp ')' '{' StmtSeq '}' ('else' '{' StmtSeq '}')? 
 Exp ::= Eq ('&&' Eq)* 
-Eq ::= Add ('==' Add)*
+Eq ::= Lwr ('==' Lwr)*
+Lwr ::= Add ('<' Add)*
 Add ::= Mul ('+' Mul)*
 Mul::= Atom ('*' Atom)*
-Atom ::= '<<' Exp ',' Exp '>>' | 'fst' Atom | 'snd' Atom | '-' Atom | '!' Atom | BOOL | NUM | IDENT | '(' Exp ')'
+Atom ::= '<<' Exp ',' Exp '>>' | 'fst' Atom | 'snd' Atom | '-' Atom | '!' Atom | 'seasonof' Atom | '#' Atom | BOOL | NUM | SEASON | IDENT | '(' Exp ')'
 */
 
 public class BufferedParser implements Parser {
@@ -114,7 +115,7 @@ public class BufferedParser implements Parser {
 			return parseAssignStmt();
 		case IF:
 			return parseIfStmt();
-		case FOR: // aggiunto in data 07/06/2020
+		case FOR: 
 			return parseForStmt();
 		}
 	}
@@ -162,9 +163,10 @@ public class BufferedParser implements Parser {
 		return new Block(stmts);
 	}
 	
-	private ForStmt parseForStmt() throws ParserException { // aggiunto in data 21/06/2020
+	// parse a for-to statement
+	private ForStmt parseForStmt() throws ParserException { // aggiunto parse di FOR-TO
 		consume(FOR); 
-		var id = parseVarIdent(); // modificato in data 23/06
+		var id = parseVarIdent();
 		consume(TO);
 		var exp = parseExp();
 		var stmts = parseBlock();
@@ -201,11 +203,11 @@ public class BufferedParser implements Parser {
 	 * parses expressions, starting from the lowest precedence operator LOWER which is
 	 * left-associative
 	 */
-	private Exp parseLwr() throws ParserException { // aggiunto in data 21/06
+	private Exp parseLwr() throws ParserException { // aggiunto parse di LOWER
 		var exp = parseAdd();
 		while (buf_tokenizer.tokenType() == LOWER) {
 			nextToken();
-			exp = new Lower(exp, parseAdd()); // da aggiungere all'AST
+			exp = new Lower(exp, parseAdd());
 		}
 		return exp;
 	}
@@ -259,11 +261,11 @@ public class BufferedParser implements Parser {
 			return parseFst();
 		case SND:
 			return parseSnd();
-		case SEASON: // aggiunto 21/06
+		case SEASON: 
 			return parseSeason(); 
-		case SEASONOF: // aggiunto 21/06
+		case SEASONOF: 
 			return parseSeasonOf();
-		case NUMBER: // aggiunto 21/06
+		case NUMBER: 
 			return parseNumber();
 		}
 	}
@@ -331,20 +333,20 @@ public class BufferedParser implements Parser {
 		return exp;
 	}
 	
-	private SeasonLiteral parseSeason() throws ParserException {
+	private SeasonLiteral parseSeason() throws ParserException { // aggiunto parse di SEASON
 		var val = buf_tokenizer.seasonValue();
-		consume(SEASON);
-		return new SeasonLiteral(val); // aggiunto 21/06 // da aggiungere all'AST
+		consume(SEASON); // or nextToken() since SEASON has already been recognized
+		return new SeasonLiteral(val); 
 	}
 	
-	private SeasonOf parseSeasonOf() throws ParserException {
-		consume(SEASONOF);
-		return new SeasonOf(parseAtom()); // aggiunto 21/06 // da aggiungere all'AST
+	private SeasonOf parseSeasonOf() throws ParserException { // aggiunto parse di SEASONOF
+		consume(SEASONOF); // or nextToken() since SEASONOF has already been recognized
+		return new SeasonOf(parseAtom()); 
 	}
 	
-	private NumOf parseNumber() throws ParserException {
-		consume(NUMBER);
-		return new NumOf(parseAtom()); // aggiunto 21/06 // da aggiungere all'AST
+	private NumOf parseNumber() throws ParserException { // aggiunto parse di NUMBEROF
+		consume(NUMBER); // or nextToken() since NUMBER has already been recognized
+		return new NumOf(parseAtom()); 
 	}
 
 	private static BufferedReader tryOpenInput(String inputPath) throws FileNotFoundException {

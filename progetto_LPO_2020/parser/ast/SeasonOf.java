@@ -1,4 +1,4 @@
-package progetto_LPO_2020.parser.ast; // creato in data 21/06
+package progetto_LPO_2020.parser.ast; 
 
 import progetto_LPO_2020.visitors.Visitor;
 
@@ -10,6 +10,6 @@ public class SeasonOf extends UnaryOp {
 
 	@Override
 	public <T> T accept(Visitor<T> visitor) {
-		return visitor.visitSeasonOf(exp); //aggiungere alla classe visitors
+		return visitor.visitSeasonOf(exp); 
 	}
 }

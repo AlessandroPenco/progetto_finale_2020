@@ -35,6 +35,8 @@ public class BufferedTokenizer implements Tokenizer {
 																					 * symbols are singleton lexical
 																					 * categories
 																					 */
+		// aggiunti in symbolRegEx i simboli < e #
+		
 		regEx = skipRegEx + "|" + identRegEx + "|" + numRegEx + "|"
 				+ symbolRegEx; /*
 								 * global regular expression obtained as union of the different lexical
@@ -51,13 +53,13 @@ public class BufferedTokenizer implements Tokenizer {
 		keywords.put("else", ELSE);
 		keywords.put("fst", FST);
 		keywords.put("snd", SND);
-		keywords.put("seasonof", SEASONOF); //aggiunto in data 07/06/2020
-		keywords.put("Winter", SEASON); //aggiunto in data 07/06/2020, modificato 21/06
-		keywords.put("Spring", SEASON); //aggiunto in data 07/06/2020, modificato 21/06
-		keywords.put("Summer", SEASON); //aggiunto in data 07/06/2020, modificato 21/06
-		keywords.put("Fall", SEASON); //aggiunto in data 07/06/2020, modificato 21/06
-		keywords.put("for", FOR); //aggiunto in data 07/06/2020
-		keywords.put("to", TO); //aggiunto in data 07/06/2020
+		keywords.put("seasonof", SEASONOF); //aggiunta keyword seasonof
+		keywords.put("Winter", SEASON); //aggiunta keyword Winter di tipo season
+		keywords.put("Spring", SEASON); //aggiunta keyword Spring di tipo season
+		keywords.put("Summer", SEASON); //aggiunta keyword Summer di tipo season
+		keywords.put("Fall", SEASON); //aggiunta keyword Fall di tipo season
+		keywords.put("for", FOR); //aggiunta keyword for
+		keywords.put("to", TO); //aggiunta keyword to
 	}
 
 	static { // static initializer to define the table of symbols
@@ -76,8 +78,8 @@ public class BufferedTokenizer implements Tokenizer {
 		symbols.put("!", NOT);
 		symbols.put("&&", AND);
 		symbols.put("==", EQ);
-		symbols.put("<", LOWER);
-		symbols.put("#", NUMBER);
+		symbols.put("<", LOWER); // aggiunto simbolo <
+		symbols.put("#", NUMBER); // aggiunto simbolo #
 	}
 
 	public BufferedTokenizer(BufferedReader br) {
@@ -120,7 +122,7 @@ public class BufferedTokenizer implements Tokenizer {
 		tokenType = null;
 	}
 
-	private void semanticAnnotation() { // required for num or bool literals // seaosonof
+	private void semanticAnnotation() { // required for num, bool or seaoson literals
 		switch (tokenType) {
 		case NUM:
 			intValue = Integer.decode(tokenString);
@@ -128,7 +130,7 @@ public class BufferedTokenizer implements Tokenizer {
 		case BOOL:
 			boolValue = Boolean.parseBoolean(tokenString);
 			break;
-		case SEASON:// aggiunto 21/06
+		case SEASON: // gestione del caso in cui il tokenizer incontrasse un token di tipo season
 			switch(tokenString) {
 			case "Winter":
 				seasonValue = "Winter";
@@ -141,7 +143,7 @@ public class BufferedTokenizer implements Tokenizer {
 				break;
 			case "Fall":
 				seasonValue = "Fall";
-				break;// aggiunto 21/06
+				break;
 			default:
 				break;
 			}
@@ -198,7 +200,7 @@ public class BufferedTokenizer implements Tokenizer {
 		return intValue;
 	}
 	
-	public String seasonValue() { // aggiunto in data 07/06/2020, 21/06
+	public String seasonValue() { // valore season del token appena riconosciuto, se di tipo SEASON
 		checkLegalState(SEASON);
 		return seasonValue;
 	}

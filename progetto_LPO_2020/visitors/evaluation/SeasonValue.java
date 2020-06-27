@@ -16,7 +16,7 @@ public class SeasonValue extends PrimValue<String> {
 	}
 	
 	@Override
-	public final boolean lower(Object obj) { // 24/06
+	public final boolean lower(Object obj) { // aggiunta funzione lower per il tipo season
 		if(this.equals(obj))
 			return false;
 		if (!(obj instanceof SeasonValue))
@@ -25,7 +25,7 @@ public class SeasonValue extends PrimValue<String> {
 		else return false;
 	}
 
-	public int toIntS() {
+	public int toIntS() { // aggiunta funzione toIntS per l'operatore '#'
 		switch (value) {
 		case "Winter":
 			return 0;

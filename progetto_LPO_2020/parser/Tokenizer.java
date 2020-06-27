@@ -14,7 +14,7 @@ public interface Tokenizer extends AutoCloseable {
 
 	boolean boolValue();
 	
-	String seasonValue(); // aggiunto 21/06
+	String seasonValue(); // aggiunta funzione per ritornare il valore del token di tipo season, presente in BufferedTokenizer
 
 	public void close() throws IOException;
 

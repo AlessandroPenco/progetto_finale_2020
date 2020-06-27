@@ -68,7 +68,7 @@ public class TypeCheck implements Visitor<Type> {
 	}
 	
 	@Override
-	public Type visitForStmt(VarIdent id, Exp exp, Block stmts) { // aggiunto in data 23/06
+	public Type visitForStmt(VarIdent id, Exp exp, Block stmts) { 
 		INT.checkEqual(env.lookup(id));
 		INT.checkEqual(exp.accept(this));
 		if (stmts == null)
@@ -134,7 +134,7 @@ public class TypeCheck implements Visitor<Type> {
 	}
 	
 	@Override
-	public Type visitLower(Exp left, Exp right) { // aggiunto in data 23/06
+	public Type visitLower(Exp left, Exp right) { 
 		left.accept(this).checkEqual(right.accept(this));
 		return BOOL;
 	}
@@ -166,19 +166,19 @@ public class TypeCheck implements Visitor<Type> {
 	}
 	
 	@Override
-	public Type visitNumOf(Exp exp) { // aggiunto in data 23/06
+	public Type visitNumOf(Exp exp) { 
 		SEASON.checkEqual(exp.accept(this));
 		return INT;
 	}
 	
 	@Override
-	public Type visitSeasonOf(Exp exp) { // aggiunto in data 23/06
+	public Type visitSeasonOf(Exp exp) { 
 		INT.checkEqual(exp.accept(this));
 		return SEASON;
 	}
 	
 	@Override
-	public Type visitSeasonLiteral(String value) { // aggiunto in data 23/06
+	public Type visitSeasonLiteral(String value) { 
 		return SEASON;
 	}
 

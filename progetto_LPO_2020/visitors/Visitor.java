@@ -47,13 +47,13 @@ public interface Visitor<T> {
 
 	T visitSnd(Exp exp);
 	
-	T visitForStmt(VarIdent id, Exp exp, Block stmts); // aggiunto  e modificato in data 23/06
+	T visitForStmt(VarIdent id, Exp exp, Block stmts);
 	
-	T visitLower(Exp left, Exp right); // aggiunto in data 23/06
+	T visitLower(Exp left, Exp right);
 	
-	T visitNumOf(Exp exp); // aggiunto in data 23/06
+	T visitNumOf(Exp exp); 
 	
-	T visitSeasonLiteral(String value); // aggiunto in data 23/06
+	T visitSeasonLiteral(String value); 
 	
-	T visitSeasonOf(Exp exp); // aggiunto in data 23/06
+	T visitSeasonOf(Exp exp);
 }

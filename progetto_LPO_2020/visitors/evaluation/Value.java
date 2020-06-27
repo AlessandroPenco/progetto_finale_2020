@@ -18,9 +18,9 @@ public interface Value {
 		throw new EvaluatorException("Expecting a pair");
 	}
 
-	default String toSeason() { // 24/06
+	default String toSeason() { 
 		throw new EvaluatorException("Expecting an integer");
 	}
 	
-	boolean lower(Object obj); // 23/06
+	boolean lower(Object obj); 
 }
