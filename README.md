@@ -13,17 +13,6 @@
 * `tests/failure/dynamic-semantics/`: test che non passano i controlli di semantica dinamica (senza opzione `-ntc`)
 * `tests/failure/ntc/`: test che non passano i controlli di semantica dinamica (con opzione `-ntc`)
 
-## Modalità di consegna
-
-È sufficiente avere attivato il link di GitHub classroom e rendere disponibili sul repository tutti i sorgenti necessari
-per la compilazione del progetto. Ricordatevi di fare il commit e push finali e poi comunicatemi il link
-del repository tramite la [consegna su AulaWeb](https://2019.aulaweb.unige.it/mod/assign/view.php?id=20793). 
-Per favore, indicatemi un **unico** repository anche se il gruppo è costitutio da più persone.
-
-**Importante**: per la consegna è necessario che il progetto passi **tutti i 29 test** contenuti nel folder `tests`.
-Tutti i componenti del gruppo devono contribuire equamente allo sviluppo del progetto, lo scopo del colloquio finale **individuale**
-è quello di verificare che ognuno abbia ben compreso il funzionamento del progetto.
-
 ## Membri del gruppo
 
 * Alessandro Penco - 4697398
@@ -53,5 +42,3 @@ Inoltre sono stati modificati i seguenti sorgenti:
 * `progetto_LPO_2020/visitors/evaluation/Eval.java`
 * `progetto_LPO_2020/visitors/typechecking/PrimtType.java`
 * `progetto_LPO_2020/visitors/typechecking/TypeCheck.java`
-
-## Note
