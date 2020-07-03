@@ -2,7 +2,8 @@
 
 ## Contenuto del repository
 
-* `progetto_LPO_2020` : Directori contenente il progetto
+* `lab11_05_11` : Directory contenente i file dai quali si è partiti per svolgere il progetto
+* `progetto_LPO_2020` : Directory contenente il progetto
 * `semantica-statica.ml` : semantica statica del linguaggio esteso, definita in OCaml
 * `semantica-dinamica.ml` : semantica dinamica del linguaggio esteso, definita in OCaml
 * `specifica.pdf`: specifica del linguaggio esteso, con commenti ed esempi
