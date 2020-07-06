@@ -12,11 +12,7 @@ public class ForStmt implements Stmt {
 	public ForStmt(VarIdent id, Exp exp, Block stmts) {
 		this.id = requireNonNull(id);
 		this.exp = requireNonNull(exp);
-		this.stmts = stmts;
-	}
-
-	public ForStmt(VarIdent id, Exp exp) {
-		this(id, exp, null);
+		this.stmts = requireNonNull(stmts);
 	}
 
 	@Override
