@@ -84,10 +84,10 @@ public class Eval implements Visitor<Value> {
 		if(v <= m) {
 			if (stmts != null) {
 				stmts.accept(this);
-				var a = new IntValue(Integer.valueOf(++v));
-				env.update(id, a); // da modificare
-				return visitForStmt(id, exp, stmts);
 			}
+			var a = new IntValue(Integer.valueOf(++v));
+			env.update(id, a); 
+			return visitForStmt(id, exp, stmts);
 		}
 		return null;
 	}
