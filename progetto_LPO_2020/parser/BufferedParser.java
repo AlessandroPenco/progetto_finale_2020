@@ -344,7 +344,7 @@ public class BufferedParser implements Parser {
 		return new SeasonOf(parseAtom()); 
 	}
 	
-	private NumOf parseNumber() throws ParserException { // aggiunto parse di NUMBEROF
+	private NumOf parseNumber() throws ParserException { // aggiunto parse di NUMBER
 		consume(NUMBER); // or nextToken() since NUMBER has already been recognized
 		return new NumOf(parseAtom()); 
 	}
