@@ -23,7 +23,7 @@ public class BufferedTokenizer implements Tokenizer {
 	private String tokenString; // the lexeme of the currently recognized token
 	private int intValue; // the integer value if the currently recognized token has type NUM
 	private boolean boolValue; // the boolean value if the currently recognized token has type BOOL
-	private String seasonValue; //aggiunto in data 07/06/2020
+	private String seasonValue; // il valore String se il token riconosciuto è di tipo SEASON
 
 	static { // static initializer to define the regular expression of all valid lexemes
 		// remark: groups must correspond to the ordinal of the corresponding
