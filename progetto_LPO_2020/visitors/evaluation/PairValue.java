@@ -51,7 +51,7 @@ public class PairValue implements Value {
 		if(this.equals(obj))
 			return false;
 		if (!(obj instanceof PairValue))
-			return false;
+			throw new EvaluatorException("Expecting a PairValue");
 		var op = (PairValue) obj;
 		return fstVal.lower(op.fstVal) && sndVal.lower(op.sndVal);
 	}
