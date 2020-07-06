@@ -170,7 +170,7 @@ public class BufferedParser implements Parser {
 		consume(TO);
 		var exp = parseExp();
 		var stmts = parseBlock();
-		return new ForStmt(id, exp, stmts); //aggiungere ForStmt all'AST
+		return new ForStmt(id, exp, stmts);
 	}
 
 	/*
