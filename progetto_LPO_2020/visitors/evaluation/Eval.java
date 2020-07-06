@@ -82,9 +82,7 @@ public class Eval implements Visitor<Value> {
 		var v = env.lookup(id).toInt();
 		var m = exp.accept(this).toInt();
 		if(v <= m) {
-			if (stmts != null) {
-				stmts.accept(this);
-			}
+			stmts.accept(this);
 			var a = new IntValue(Integer.valueOf(++v));
 			env.update(id, a); 
 			return visitForStmt(id, exp, stmts);
