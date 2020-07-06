@@ -42,7 +42,7 @@ public class IntValue extends PrimValue<Integer> {
 		case 3:
 			return "Fall";
 		default:
-			throw new IndexOutOfBoundsException("Index " + value +" out of bounds for length 4");
+			throw new EvaluatorException(new IndexOutOfBoundsException("Index " + value +" out of bounds for length 4"));
 		}
 	}
 
