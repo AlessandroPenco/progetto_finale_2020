@@ -71,8 +71,6 @@ public class TypeCheck implements Visitor<Type> {
 	public Type visitForStmt(VarIdent id, Exp exp, Block stmts) { 
 		INT.checkEqual(env.lookup(id));
 		INT.checkEqual(exp.accept(this));
-		if (stmts == null)
-			return null;
 		stmts.accept(this);
 		return null;
 	}
